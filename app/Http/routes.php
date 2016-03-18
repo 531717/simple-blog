@@ -15,6 +15,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/post/form', ['as' => 'post.form', 'uses' => 'PostController@form']);
+Route::post('/post/save', ['as' => 'post.save', 'uses' => 'PostController@save']);
 
 Route::get('/posts', ['as' => 'posts.index', function () {
     return view('posts.index');
